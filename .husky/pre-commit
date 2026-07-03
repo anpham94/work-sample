@@ -1,0 +1,5 @@
+echo "Step 1: Checking TypeScript types..."
+npm run type-check
+
+echo "Step 2: Running Prettier & ESLint via lint-staged..."
+npx lint-staged
