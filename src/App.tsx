@@ -1,5 +1,13 @@
+import "@/app.css";
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "@/routes";
+
 function App() {
-  return <h1>Digital Banking Platform</h1>;
+  return (
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
+  );
 }
 
 export default App;
