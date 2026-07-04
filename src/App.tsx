@@ -1,5 +1,13 @@
+import "@/app.css";
+import MainLayout from "@/layouts/MainLayout";
+import AccountOverviewPage from "@/features/AccountOverviewPage";
+
 function App() {
-  return <h1>Digital Banking Platform</h1>;
+  return (
+    <MainLayout>
+      <AccountOverviewPage />
+    </MainLayout>
+  );
 }
 
 export default App;
