@@ -1,12 +1,12 @@
 import "@/app.css";
-import MainLayout from "@/layouts/MainLayout";
-import AccountOverviewPage from "@/features/AccountOverviewPage";
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "@/routes";
 
 function App() {
   return (
-    <MainLayout>
-      <AccountOverviewPage />
-    </MainLayout>
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
   );
 }
 

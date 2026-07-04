@@ -3,29 +3,40 @@ import { formatNumber } from "@/utils/format";
 
 interface HiddenBalanceProps {
   balance: number;
+  className?: string;
+  containerClassName?: string;
 }
 
-const HiddenBalance: React.FC<HiddenBalanceProps> = ({ balance }) => {
+const HiddenBalance: React.FC<HiddenBalanceProps> = ({
+  balance,
+  className,
+  containerClassName,
+}) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   const handleToggle = () => {
     setIsVisible((prev) => !prev);
   };
 
+  const textClass = className || "text-slate-900 text-xl";
+  const currencyClass = className
+    ? `${className} opacity-80 !text-xs`
+    : "text-xs font-bold text-slate-500";
+
   return (
-    <div className="mt-6 flex items-baseline justify-start gap-2 w-full">
+    <div className={`flex items-baseline gap-2 ${containerClassName || ""}`}>
       <div className="flex items-baseline gap-1.5 font-sans">
         {isVisible ? (
           <>
-            <span className="text-xl font-black tracking-tight text-slate-900">
+            <span className={`font-black tracking-tight ${textClass}`}>
               {formatNumber(balance)}
             </span>
-            <span className="text-xs font-bold text-slate-500 select-none">VND</span>
+            <span className={`font-bold select-none ${currencyClass}`}>VND</span>
           </>
         ) : (
           <>
-            <span className="text-lg font-bold tracking-widest text-slate-900">*** ***</span>
-            <span className="text-xs font-bold text-slate-500 select-none">VND</span>
+            <span className={`font-bold tracking-widest ${textClass}`}>*** ***</span>
+            <span className={`font-bold select-none ${currencyClass}`}>VND</span>
           </>
         )}
       </div>
@@ -33,7 +44,7 @@ const HiddenBalance: React.FC<HiddenBalanceProps> = ({ balance }) => {
       <button
         type="button"
         onClick={handleToggle}
-        className="p-1 text-slate-400 hover:text-slate-900 transition-colors cursor-pointer flex items-center justify-center relative z-20 self-center"
+        className="p-1 text-slate-400 hover:text-white transition-colors cursor-pointer flex items-center justify-center relative z-20 self-center"
         title={isVisible ? "Ẩn số dư" : "Hiển thị số dư"}
       >
         {isVisible ? (

@@ -1,10 +1,6 @@
-import React from "react";
+import { Outlet } from "react-router-dom";
 
-interface MainLayoutProps {
-  children?: React.ReactNode;
-}
-
-const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
+const MainLayout = () => {
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans antialiased selection:bg-indigo-500 selection:text-white">
       <header className="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200/80 px-6 py-3.5 flex justify-between items-center shadow-xs">
@@ -37,7 +33,9 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
         </div>
       </header>
 
-      <main className="flex-1 p-4 md:p-6 max-w-7xl w-full mx-auto">{children}</main>
+      <main className="flex-1 p-4 md:p-6 max-w-7xl w-full mx-auto">
+        <Outlet />
+      </main>
     </div>
   );
 };
