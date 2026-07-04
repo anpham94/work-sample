@@ -11,20 +11,22 @@
     "prepare": "husky",
     "type-check": "tsc --noEmit",
     "lint-staged": "lint-staged",
-    "format": "prettier --write \"*.{js,jsx,ts,tsx,json,css,scss,md}\""
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "**/*.{js,jsx,ts,tsx}": [
       "prettier --write",
       "eslint --fix"
     ],
-    "*.{json,css,scss,md}": [
+    "**/*.{json,css,scss,md}": [
       "prettier --write"
     ]
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.3.2",
     "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "react-dom": "^19.2.7",
+    "tailwindcss": "^4.3.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.0",
