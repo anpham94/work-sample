@@ -1,17 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import useToggle from "@/hooks/useToggle";
-
-interface Option {
-  value: string;
-  label: string;
-}
-
-interface CustomSelectProps {
-  label: string;
-  options: Option[];
-  defaultValue?: string;
-  onChange?: (value: string) => void;
-}
+import { type CustomSelectProps } from "@/types/prop";
 
 const CustomSelect: React.FC<CustomSelectProps> = ({ label, options, defaultValue, onChange }) => {
   const [isOpen, toggleDropdown] = useToggle(false);
@@ -55,7 +44,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({ label, options, defaultValu
         </span>
 
         <div
-          className={`text-slate-400 transition-transform duration-200 flex-shrink-0 flex items-center justify-center ${isOpen ? "rotate-180 text-indigo-500" : ""}`}
+          className={`text-slate-400 transition-transform duration-200 shrink-0 flex items-center justify-center ${isOpen ? "rotate-180 text-indigo-500" : ""}`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

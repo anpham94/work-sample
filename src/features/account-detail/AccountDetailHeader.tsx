@@ -1,11 +1,7 @@
 import React from "react";
 import FormattedAccountNumber from "@/components/FormattedAccountNumber";
 import HiddenBalance from "@/components/HiddenBalance";
-
-interface AccountDetailHeaderProps {
-  accountNumber: number;
-  balance: number;
-}
+import { type AccountDetailHeaderProps } from "@/types/prop";
 
 const AccountDetailHeader: React.FC<AccountDetailHeaderProps> = ({ accountNumber, balance }) => {
   return (

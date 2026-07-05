@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import { formatNumber } from "@/utils/format";
-
-interface HiddenBalanceProps {
-  balance: number;
-  className?: string;
-  containerClassName?: string;
-}
+import { type HiddenBalanceProps } from "@/types/prop";
 
 const HiddenBalance: React.FC<HiddenBalanceProps> = ({
   balance,
