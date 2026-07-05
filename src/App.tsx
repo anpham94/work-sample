@@ -1,12 +1,15 @@
 import "@/app.css";
 import { BrowserRouter } from "react-router-dom";
 import AppRouter from "@/routes";
+import { AutoLogoutProvider } from "@/providers/AutoLogoutProvider";
 
 function App() {
   return (
-    <BrowserRouter>
-      <AppRouter />
-    </BrowserRouter>
+    <AutoLogoutProvider>
+      <BrowserRouter>
+        <AppRouter />
+      </BrowserRouter>
+    </AutoLogoutProvider>
   );
 }
 
