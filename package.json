@@ -11,7 +11,8 @@
     "prepare": "husky",
     "type-check": "tsc --noEmit",
     "lint-staged": "lint-staged",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "mock-server": "json-server db.json --auth-rules routes.json --port 4000"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
@@ -24,10 +25,12 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.2",
+    "axios": "^1.18.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-router-dom": "^7.18.1",
-    "tailwindcss": "^4.3.2"
+    "tailwindcss": "^4.3.2",
+    "zustand": "^5.0.14"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.0",
@@ -43,6 +46,8 @@
     "eslint-plugin-react-refresh": "^0.5.3",
     "globals": "^17.7.0",
     "husky": "^9.1.7",
+    "json-server": "^0.17.4",
+    "json-server-auth": "^2.1.0",
     "lint-staged": "^17.0.8",
     "prettier": "^3.9.4",
     "typescript": "~6.0.2",

@@ -1,10 +1,6 @@
 import React from "react";
 import { formatAccountNumber } from "@/utils/format";
-
-interface FormattedAccountNumberProps {
-  value: number;
-  className?: string;
-}
+import { type FormattedAccountNumberProps } from "@/types/prop";
 
 const FormattedAccountNumber: React.FC<FormattedAccountNumberProps> = ({
   value,
