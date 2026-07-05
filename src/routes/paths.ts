@@ -1,8 +1,11 @@
 export const PATH_ROUTES = {
   ROOT: "/",
+  AUTH: {
+    LOGIN: "/login",
+  },
   ACCOUNT: {
     OVERVIEW: "/",
-    DETAIL: (id: string) => `/account/${id}`,
-    DETAIL_PATTERN: "/account/:id",
+    DETAIL: (accountId: string) => `/account/${accountId}`,
+    DETAIL_PATTERN: "/account/:accountId",
   },
 } as const;
